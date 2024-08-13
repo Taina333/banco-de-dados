@@ -16,4 +16,4 @@ async function criarTabela(login, senha){
     console.log('Dados inseridos com sucesso!');
 }
 
-criarTabela();
+criarTabela('alana', 'alana');
