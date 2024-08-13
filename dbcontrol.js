@@ -1,13 +1,16 @@
-import { sqlite } from 'sqlite3';
-import { open } from 'sqlite'
+import sqlite3  from 'sqlite3';
+import { open } from 'sqlite';
 
-async funtion criarTabela(login, senha){
-    const db = await open({
+async function criarTabela(login, senha){
+        const db = await open({
         filename: './banco.db',
         driver: sqlite3.Database
     });
 
     //Criação da criarTabela
-    db.exec('CREATE TABLE IF NOT EXIST login
-    (id INTEGER PRIMARY KEY AUTOINCREMENT, login VARCHAR, senha VARCHAR)');
+    db.exec('CREATE TABLE IF NOT EXISTS login (id INTEGER PRIMARY KEY AUTOINCREMENT, login VARCHAR, senha VARCHAR)');
+
+
 }
+
+criarTabela();
